@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="people">
+    <h1>My People</h1>
+  </div>
+  <script id="user-template" type="text/x-handlebars-template">
+        {{#each results}}
+        <div class="user" data-id="{{id.value}}">
+          <img src={{picture.large}}>
+          <p>{{name.first}} {{name.last}}</p>
+          <p class="email">{{email}}</p>
+        </div>
+        {{/each}}
+    </script>
+
+  <div class="filter">
+    <input type="text" placeholder="Users count" id="input">
+    <div id="post" onclick="update()">Update</div>
+  </div>
+  <div class="container"></div>
+  <script src="main.js"></script>
+</body>
+
+</html>
