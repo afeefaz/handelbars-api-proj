@@ -7,6 +7,7 @@ const update = function(){
     let template = Handlebars.compile(source);
     
     let newHTML = template(data);
+    $('.container').empty();
     $('.container').append(newHTML);
   });
 }
